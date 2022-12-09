@@ -1,6 +1,6 @@
 // CloudSDK.debug.js
-// version: 3.1.11
-// date-of-build: 221011
+// version: 3.1.12
+// date-of-build: 221209
 // copyright (c) VXG Inc
 // Includes gl-matrix  <https://github.com/toji/gl-matrix>
 // ver: 3.3.0 // Available under MIT License 
@@ -13884,8 +13884,8 @@ window.CloudSessionTimeline = function(viewid){
 window.CloudSDK = window.CloudSDK || {};
 
 // Automaticlly generated
-CloudSDK.version = '3.1.11';
-CloudSDK.datebuild = '221011';
+CloudSDK.version = '3.1.12';
+CloudSDK.datebuild = '221209';
 console.log('CloudSDK.version='+CloudSDK.version + '_' + CloudSDK.datebuild);
 
 // Wrapper for VXGCloudPlayer & CloudSDK
@@ -13972,7 +13972,7 @@ window.CloudPlayerSDK = function(playerElementID, o) {
 
 			if(obj.api && obj.api != ''){
 				var l_svcp_url = '';
-				l_svcp_url = (location.protocol=="file:"?"http:":location.protocol) + "//" + obj.api;
+				l_svcp_url = (location.protocol=="file:"?"http:":"https:") + "//" + obj.api;
 				if(location.protocol == "http:" || location.protocol == "file:"){
 					l_svcp_url += (obj.api_p ? ":" + obj.api_p : "");
 				} else if(location.protocol == "https:"){
@@ -13999,6 +13999,7 @@ window.CloudPlayerSDK = function(playerElementID, o) {
 			self.player.setAccessTokenExpire(self.tokenExpire);
 		} else {
 			self.player.stop("by_plrsdk_3");
+			self.conn.updateToken(self.sharedKey);
 			if(self.svcp_url != null){ // if server is custom
 				self.conn.ServiceProviderUrl = self.svcp_url.replace('file://','https://');
 			}

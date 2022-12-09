@@ -1,5 +1,11 @@
 # Web SDK for VXG Cloud & Server
 
+### Web SDK for VXG Cloud & Server 3.1.12_221209
+-   Fix reuse different token for player-instance
+
+### Web SDK for VXG Cloud & Server 3.1.11_221011
+-   New sample VSAAS-backend
+
 ### Web SDK for VXG Cloud & Server 3.1.10_220517
 -   Fix destroying player
 -   Add sample for dynamic player create-destroy
